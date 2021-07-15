@@ -1,0 +1,10 @@
+<form [formGroup]="myForm">
+  <wj-multi-select #mp formControlName="selectedWidgets" [itemsSource]="availableWidgets" [isEditable]="true"
+    [displayMemberPath]="'prop'" [checkedMemberPath]="'check'"
+    (checkedItemsChanged)="onCheckedItemsChanged(mp, $event)"></wj-multi-select>
+  <br>
+  <br>
+  <button (click)="addItem()">Add Item</button>
+  <p>Multi Select Status: {{myForm.controls.selectedWidgets.status}}</p>
+  <p>FormGroud valid: {{myForm.valid}}</p>
+</form>
